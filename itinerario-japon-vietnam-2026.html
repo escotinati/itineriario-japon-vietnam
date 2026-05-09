@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Japón & Vietnam · Verano 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F9F6F0;
+    --ink: #1C1A17;
+    --ink-light: #5A5650;
+    --ink-muted: #9A9590;
+    --red: #C0392B;
+    --red-light: #F5E6E4;
+    --gold: #B8860B;
+    --gold-light: #FBF4E0;
+    --teal: #1A6B5A;
+    --teal-light: #E2F0EC;
+    --blue: #1A4A7A;
+    --blue-light: #E4EDF7;
+    --border: #E0DDD6;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--ink);
+    color: white;
+    padding: 4rem 2rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(192,57,43,0.18) 0%, transparent 60%),
+                radial-gradient(ellipse at 75% 30%, rgba(26,107,90,0.15) 0%, transparent 55%);
+  }
+  .hero-inner { position: relative; max-width: 680px; margin: 0 auto; }
+  .hero-eyebrow {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 1rem;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.8rem, 7vw, 4.5rem);
+    font-weight: 400;
+    line-height: 1.1;
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+  .hero h1 em { font-style: italic; color: rgba(255,255,255,0.7); }
+  .hero-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.03em;
+  }
+  .hero-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 2rem;
+  }
+  .hero-tag {
+    font-size: 12px;
+    padding: 4px 14px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 99px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: white;
+    border-bottom: 1px solid var(--border);
+    padding: 0 1rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  nav::-webkit-scrollbar { display: none; }
+  .nav-inner {
+    display: flex;
+    gap: 0;
+    max-width: 900px;
+    margin: 0 auto;
+    white-space: nowrap;
+  }
+  .nav-inner a {
+    display: inline-block;
+    padding: 14px 16px;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--ink-muted);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .nav-inner a:hover { color: var(--ink); border-bottom-color: var(--border); }
+
+  /* MAIN */
+  main { max-width: 900px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* SECTION */
+  section { padding: 3rem 0; border-bottom: 1px solid var(--border); }
+  section:last-child { border-bottom: none; }
+
+  .section-header { margin-bottom: 2rem; }
+  .section-kicker {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 0.4rem;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--ink);
+  }
+  .section-title em { font-style: italic; color: var(--ink-light); }
+  .section-dates {
+    font-size: 13px;
+    color: var(--ink-muted);
+    margin-top: 4px;
+  }
+
+  /* ALERT */
+  .alert {
+    border-left: 3px solid var(--gold);
+    background: var(--gold-light);
+    padding: 12px 16px;
+    border-radius: 0 8px 8px 0;
+    font-size: 13px;
+    color: var(--ink-light);
+    line-height: 1.55;
+    margin-bottom: 1.25rem;
+  }
+  .alert strong { color: var(--ink); font-weight: 500; }
+  .alert.blue { border-left-color: var(--blue); background: var(--blue-light); }
+  .alert.green { border-left-color: var(--teal); background: var(--teal-light); }
+  .alert.red { border-left-color: var(--red); background: var(--red-light); }
+
+  /* DAY CARDS */
+  .days { display: flex; flex-direction: column; gap: 10px; margin-bottom: 2rem; }
+  .day {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    gap: 16px;
+  }
+  .day-label {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--ink-muted);
+    min-width: 52px;
+    padding-top: 2px;
+    letter-spacing: 0.02em;
+  }
+  .day-body { flex: 1; min-width: 0; }
+  .day-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .day-desc {
+    font-size: 13px;
+    color: var(--ink-light);
+    line-height: 1.6;
+  }
+
+  /* BADGES */
+  .badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 99px;
+    letter-spacing: 0.03em;
+    vertical-align: middle;
+  }
+  .badge-warn { background: #FEF3C7; color: #92400E; }
+  .badge-ok { background: var(--teal-light); color: var(--teal); }
+  .badge-tip { background: #ECFDF5; color: #065F46; }
+  .badge-info { background: var(--blue-light); color: var(--blue); }
+  .badge-red { background: var(--red-light); color: var(--red); }
+
+  /* FOOD GRID */
+  .food-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 1.25rem;
+  }
+  @media (max-width: 520px) { .food-grid { grid-template-columns: 1fr; } }
+  .food-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .food-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .food-desc {
+    font-size: 12px;
+    color: var(--ink-light);
+    line-height: 1.55;
+  }
+
+  /* FLIGHTS */
+  .flights { display: flex; flex-direction: column; gap: 10px; margin-bottom: 2rem; }
+  .flight {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+  .f-end { flex: 1; }
+  .f-time { font-family: var(--serif); font-size: 22px; font-weight: 500; color: var(--ink); }
+  .f-apt { font-size: 11px; color: var(--ink-muted); margin-top: 2px; }
+  .f-mid { flex: 1.3; text-align: center; padding: 0 12px; }
+  .f-dur { font-size: 11px; color: var(--ink-muted); margin-bottom: 6px; }
+  .f-line { height: 1px; background: var(--border); position: relative; }
+  .f-line::after { content: '▶'; position: absolute; right: -6px; top: -7px; font-size: 11px; color: var(--ink-muted); }
+  .f-end.right { text-align: right; }
+
+  /* HOTELS */
+  .hotels { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 2rem; }
+  @media (max-width: 560px) { .hotels { grid-template-columns: 1fr; } }
+  .hotel {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+  .hotel-dates { font-size: 11px; color: var(--ink-muted); margin-bottom: 4px; font-weight: 500; letter-spacing: 0.02em; }
+  .hotel-name { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 3px; }
+  .hotel-addr { font-size: 12px; color: var(--ink-light); }
+
+  /* SEPARATOR */
+  .sep-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin: 1.75rem 0 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .sep-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 2rem;
+    font-size: 12px;
+  }
+  footer strong { color: rgba(255,255,255,0.7); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Itinerario de viaje · Verano 2026</div>
+    <h1>Japón <em>&</em> Vietnam</h1>
+    <div class="hero-sub">21 julio – 13 agosto · 24 días</div>
+    <div class="hero-tags">
+      <span class="hero-tag">Tokio</span>
+      <span class="hero-tag">Hakone</span>
+      <span class="hero-tag">Kioto</span>
+      <span class="hero-tag">Hiroshima</span>
+      <span class="hero-tag">Osaka</span>
+      <span class="hero-tag">Da Nang</span>
+      <span class="hero-tag">Hanoi</span>
+    </div>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#overview">Resumen</a>
+    <a href="#tokyo">Tokio</a>
+    <a href="#hakone">Hakone</a>
+    <a href="#kyoto">Kioto</a>
+    <a href="#hiroshima">Hiroshima</a>
+    <a href="#osaka">Osaka</a>
+    <a href="#danang">Da Nang</a>
+    <a href="#hanoi">Hanoi</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- OVERVIEW -->
+  <section id="overview">
+    <div class="section-header">
+      <div class="section-kicker">Visión general</div>
+      <h2 class="section-title">El viaje de un vistazo</h2>
+    </div>
+
+    <div class="sep-label">Vuelos</div>
+    <div class="flights">
+      <div class="flight">
+        <div class="f-end"><div class="f-time">15:45</div><div class="f-apt">MAD T4S · 21 jul</div></div>
+        <div class="f-mid"><div class="f-dur">~14 horas</div><div class="f-line"></div></div>
+        <div class="f-end right"><div class="f-time">19:10</div><div class="f-apt">NRT T2 · 22 jul</div></div>
+      </div>
+      <div class="flight">
+        <div class="f-end"><div class="f-time">14:30</div><div class="f-apt">KIX T1 · 4 ago</div></div>
+        <div class="f-mid"><div class="f-dur">~4h 20 min</div><div class="f-line"></div></div>
+        <div class="f-end right"><div class="f-time">19:50</div><div class="f-apt">DAD · 4 ago</div></div>
+      </div>
+      <div class="flight">
+        <div class="f-end"><div class="f-time">22:25</div><div class="f-apt">DAD T1 · 8 ago</div></div>
+        <div class="f-mid"><div class="f-dur">~1h 20 min</div><div class="f-line"></div></div>
+        <div class="f-end right"><div class="f-time">23:45</div><div class="f-apt">HAN T1 · 8 ago</div></div>
+      </div>
+      <div class="flight">
+        <div class="f-end"><div class="f-time">19:30</div><div class="f-apt">HAN T2 · 12 ago</div></div>
+        <div class="f-mid"><div class="f-dur">~13 horas</div><div class="f-line"></div></div>
+        <div class="f-end right"><div class="f-time">07:35</div><div class="f-apt">MAD · 13 ago</div></div>
+      </div>
+    </div>
+
+    <div class="sep-label">Alojamientos</div>
+    <div class="hotels">
+      <div class="hotel"><div class="hotel-dates">22–26 jul · Tokio</div><div class="hotel-name">Park Hotel Tokyo</div><div class="hotel-addr">Minato-ku, Higashi Shimbashi 1-7-1</div></div>
+      <div class="hotel"><div class="hotel-dates">26–27 jul · Hakone</div><div class="hotel-name">Hakone Yumoto Onsen Hotel Kajikaso</div><div class="hotel-addr">Kanagawa, Hakone, Yumoto 688</div></div>
+      <div class="hotel"><div class="hotel-dates">27–31 jul · Kioto</div><div class="hotel-name">Royal Park Hotel Kyoto Sanjo</div><div class="hotel-addr">Nakagyo-ku, Sanjo-dori Kawaramachi</div></div>
+      <div class="hotel"><div class="hotel-dates">31 jul–1 ago · Hiroshima</div><div class="hotel-name">The Knot Hiroshima</div><div class="hotel-addr">Naka-ku, Otemachi 3-1-1</div></div>
+      <div class="hotel"><div class="hotel-dates">1–4 ago · Osaka</div><div class="hotel-name">voco Osaka Central by IHG</div><div class="hotel-addr">Nishi-ku, Kyomachibori 1-7-1</div></div>
+      <div class="hotel"><div class="hotel-dates">4–8 ago · Da Nang</div><div class="hotel-name">Son Tra Beach Resort & Spa</div><div class="hotel-addr">Vietnam · días de relax</div></div>
+      <div class="hotel"><div class="hotel-dates">8–12 ago · Hanoi</div><div class="hotel-name">The Legend Hanoi Hotel</div><div class="hotel-addr">Transfer incluido desde aeropuerto</div></div>
+    </div>
+  </section>
+
+  <!-- TOKYO -->
+  <section id="tokyo">
+    <div class="section-header">
+      <div class="section-kicker">Japón · 1ª etapa</div>
+      <h2 class="section-title">Tokio <em>東京</em></h2>
+      <div class="section-dates">22 – 26 julio · 4 noches · Park Hotel Tokyo</div>
+    </div>
+
+    <div class="alert">
+      <strong>⚠ Cambio recomendado para el día 26:</strong> Los restaurantes omakase son experiencias nocturnas (19–22h). Salir a Hakone ese mismo día después es inviable. Sugerencia: mueve el <strong>omakase al día 25</strong> (noche tras Ginza) y el día 26 haz Shinjuku por la mañana, come pronto y toma el Romance Car a las 13–14h.
+    </div>
+
+    <div class="days">
+      <div class="day">
+        <div class="day-label">22 jul</div>
+        <div class="day-body">
+          <div class="day-title">Llegada a Tokio</div>
+          <div class="day-desc">Aterrizaje 19:10 en Narita T2. Check-in en el Park Hotel Tokyo. Cena ligera en un konbini cercano (7-Eleven o Lawson) — primera experiencia konbini del viaje: onigiri, tamagoyaki y matcha latte.</div>
+        </div>
+      </div>
+      <div class="day">
+        <div class="day-label">23 jul</div>
+        <div class="day-body">
+          <div class="day-title">Shibuya & Harajuku</div>
+          <div class="day-desc">Scramble crossing de Shibuya y Shibuya Sky (mirador, reservar con antelación). Harajuku: Takeshita Street para moda excéntrica, luego Omotesando para arquitectura y marcas premium. Merienda: crepes de Harajuku.</div>
+        </div>
+      </div>
+      <div class="day">
+        <div class="day-label">24 jul</div>
+        <div class="day-body">
+          <div class="day-title">Asakusa & Akihabara</div>
+          <div class="day-desc">Templo Sensō-ji muy temprano (antes de las 8h para evitar masas). Nakamise-dori para papelería tradicional y objetos de recuerdo. Por la tarde: Akihabara para electrónica y cultura geek. <strong>Tip relojes:</strong> Ginza Rasin (4 plantas de relojes de lujo de segunda mano: Rolex, Omega a precios mejores que en Europa).</div>
+        </div>
+      </div>
+      <div class="day">
+        <div class="day-label">25 jul</div>
+        <div class="day-body">
+          <div class="day-title">Ginza & Odaiba + Omakase <span class="badge badge-tip">Recomendado</span></div>
+          <div class="day-desc">Mañana: Ginza para tiendas icónicas — Itoya para papelería fina (imprescindible), 6 plantas de artículos japoneses únicos. Tarde: Odaiba, TeamLab Borderless (reserva online con antelación). Noche: experiencia omakase en Tokio.</div>
+        </div>
+      </div>
+      <div class="day">
+        <div class="day-label">26 jul</div>
+        <div class="day-body">
+          <div class="day-title">Shinjuku → Hakone <span class="badge badge-warn">Día de viaje</span></div>
+          <div class="day-desc">Mañana: Shinjuku Gyoen (parque tranquilo), Golden Gai y Omoide Yokocho para fotos. Comida temprana ~11:30h. Tren Odakyu Romance Car desde Shinjuku a las 13–14h (reserva de asiento recomendable). Llegada a Hakone-Yumoto ~15:30h. Taxi al hotel Kajikaso (~10 min, ~800¥) o servicio de recogida del hotel.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sep-label">Gastronomía & compras</div>
+    <div class="food-grid">
+      <div class="food-card"><div class="food-name">Konbini experience</div><div class="food-desc">7-Eleven, Lawson o FamilyMart: onigiri, tamagoyaki, nikuman, matcha latte y snacks únicos. Una institución cultural.</div></div>
+      <div class="food-card"><div class="food-name">Tsukiji Outer Market</div><div class="food-desc">El mercado interior cerró pero el exterior sigue activo. Ideal para desayuno con sushi fresco y tamagoyaki recién hecho.</div></div>
+      <div class="food-card"><div class="food-name">Ramen Fuunji (Shinjuku)</div><div class="food-desc">Especialidad tsukemen (ramen para mojar). Cola inevitable pero merece la pena. Uno de los mejores de Tokio.</div></div>
+      <div class="food-card"><div class="food-name">Ginza Rasin · Relojes</div><div class="food-desc">4 plantas dedicadas a relojes de lujo de segunda mano. Rolex, Omega, Patek Philippe a mejores precios que en Europa.</div></div>
+    </div>
+  </section>
+
+  <!-- HAKONE -->
+  <section id="hakone">
+    <div class="section-header">
+      <div class="section-kicker">Japón · 2ª etapa</div>
+      <h2 class="section-title">Hakone <em>箱根</em></h2>
+      <div class="section-dates">26 – 27 julio · 1 noche · Hotel Kajikaso (Ryokan & Onsen)</div>
+    </div>
+
+    <div class="alert blue">
+      <strong>Transporte desde Tokio:</strong> Odakyu Romance Car desde Shinjuku directo a Hakone-Yumoto (~85 min, ~2.000¥). Reserva de asiento en la web de Odakyu. Del hotel al aeropuerto: taxi ~10 min (~800¥) o servicio de recogida del hotel (consultar al reservar).
+    </div>
+    <div class="alert green">
+      <strong>Transporte a Kioto (día 27):</strong> Bus local Hakone-Yumoto → Odawara (~30 min) + Shinkansen Hikari Odawara → Kioto (~1h 45 min). Con JR Pass está cubierto. Sin JR Pass: ~14.000¥ por persona.
+    </div>
+
+    <div class="days">
+      <div class="day">
+        <div class="day-label">Mañana</div>
+        <div class="day-body">
+          <div class="day-title">Hakone Loop (ruta circular)</div>
+          <div class="day-desc">El Hakone Free Pass incluye: tren Hakone-Tozan → funicular → teleférico → barco pirata del Lago Ashi → autobús de vuelta. Empieza temprano (8–9h) para evitar colas en el teleférico.</div>
+        </div>
+      </div>
+      <div class="day">
+        <div class="day-label">Mediodía</div>
+        <div class="day-body">
+          <div class="day-title">Owakudani</div>
+          <div class="day-desc">Valle volcánico activo con aguas sulfurosas. Los famosos kuro-tamago (huevos negros hervidos en las aguas termales), ~500¥ por 5 unidades. Vistas al Monte Fuji si el cielo está despejado.</div>
+        </div>
+      </div>
+      <div class="day">
+        <div class="day-label">Tarde</div>
+        <div class="day-body">
+          <div class="day-title">Barco pirata · Lago Ashi</div>
+          <div class="day-desc">Crucero por el lago con vistas al Monte Fuji. Incluido en el Hakone Free Pass. Desembarco en Moto-Hakone para ver el torii sobre el agua. Vuelta en autobús.</div>
+        </div>
+      </div>
+      <div class="day">
+        <div class="day-label">Noche</div>
+        <div class="day-body">
+          <div class="day-title">Onsen & Cena Kaiseki en el ryokan</div>
+          <div class="day-desc">El Hotel Kajikaso es un ryokan tradicional. Aprovecha el rotenburo (baño de aguas termales al aire libre). La cena kaiseki (menú degustación japonés) es parte de la experiencia — avisa de alergias al reservar.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KYOTO -->
+  <section id="kyoto">
+    <div class="section-header">
+      <div class="section-kicker">Japón · 3ª etapa</div>
+      <h2 class="section-title">Kioto <em>京都</em></h2>
+      <div class="section-dates">27 – 31 julio · 4 noches · Royal Park Hotel Kyoto Sanjo</div>
+    </div>
+
+    <div class="alert blue">
+      <strong>Del tren al hotel:</strong> Desde la estación de Kioto, toma el autobús línea 5 dirección Iwakura y baja en Sanjo-Keihan (~20 min, 230¥). O taxi directo ~8 min (~800¥). El hotel está a 2 min a pie de la parada Sanjo-Keihan.
+    </div>
+
+    <div class="days">
+      <div class="day">
+        <div class="day-label">27 jul</div>
+        <div class="day-body">
+          <div class="day-title">Llegada a Kioto <span class="badge badge-info">tarde</span></div>
+          <div class="day-desc">Instalación en el hotel. Paseo nocturno por Pontocho Alley — callejón estrecho paralelo al río Kamo con restaurantes kawayuka sobre el agua. Primera cena junto al río.</div>
+        </div>
+      </div>
+      <div class="day">
+        <div class="day-label">28 jul</div>
+        <div class="day-body">
+          <div class="day-title">Higashiyama & Gion</div>
+          <div class="day-desc">Templo Kiyomizudera (abrir a las 6h, ir muy temprano). Callejones Ninenzaka y Sannenzaka con tiendas de artesanía. Por la tarde: barrio Gion para ver el Kioto más antiguo. Hanamikoji-dori para cruzarte con alguna geiko al anochecer.</div>
+        </div>
+      </div>
+      <div class="day">
+        <div class="day-label">29 jul</div>
+        <div class="day-body">
+          <div class="day-title">Arashiyama & Camino del Filósofo</div>
+          <div class="day-desc">Mañana en Arashiyama: bosque de bambú (llegar antes de las 8h), jardín zen Tenryuji, paseo en barca por el río Oi. Tarde: Tetsugaku-no-michi (Camino del Filósofo), canal bordeado de cerezos, templos y cafés tranquilos.</div>
+        </div>
+      </div>
+      <div class="day">
+        <div class="day-label">30 jul</div>
+        <div class="day-body">
+          <div class="day-title">Fushimi Inari, Kinkaku-ji & Teramachi</div>
+          <div class="day-desc">Madrugada en Fushimi Inari (5:30–8h para la experiencia mística sin turistas). Mediodía: Nishiki Market para comer. Tarde: Kinkaku-ji (Pabellón Dorado) y Ryoan-ji (jardín de piedras zen, el más famoso del mundo). Noche: Teramachi Arcade para shopping.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sep-label">Extras culturales recomendados</div>
+    <div class="days">
+      <div class="day">
+        <div class="day-label">Extra</div>
+        <div class="day-body">
+          <div class="day-title">Nijo Castle <span class="badge badge-tip">Muy cerca del hotel</span></div>
+          <div class="day-desc">Castillo del shogunato Tokugawa con los famosos suelos "nightingale" (crujen para detectar intrusos). La arquitectura político-militar más importante de Kioto. A 15 min a pie del hotel.</div>
+        </div>
+      </div>
+      <div class="day">
+        <div class="day-label">Extra</div>
+        <div class="day-body">
+          <div class="day-title">Fushimi Sake District</div>
+          <div class="day-desc">En el mismo barrio de Fushimi Inari, las bodegas centenarias de Gekkeikan. Visita y cata de sake fresco directamente del tonel. Combinar con la visita al santuario.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sep-label">Gastronomía Kioto</div>
+    <div class="food-grid">
+      <div class="food-card"><div class="food-name">Kawayuka — terrazas sobre el Kamo ★</div><div class="food-desc">Solo de mayo a septiembre. Pontocho y Kibune tienen las mejores terrazas. Reserva con semanas de antelación en julio, especialmente fines de semana.</div></div>
+      <div class="food-card"><div class="food-name">Nishiki Market</div><div class="food-desc">"La cocina de Kioto". Yudofu, pickles de Kyoto, dango, pulpo en palito. Para comer de pie paseando por el mercado cubierto.</div></div>
+      <div class="food-card"><div class="food-name">Obanzai Ryori</div><div class="food-desc">Cocina casera kyotense: pequeños platos de verduras, tofu y pescado de temporada. Experiencia auténtica y económica.</div></div>
+      <div class="food-card"><div class="food-name">Matcha en Uji</div><div class="food-desc">Excursión ~30 min en tren. Uji es el origen del mejor matcha del mundo. Matcha ceremonial y pastelería wagashi en tazas tradicionales.</div></div>
+    </div>
+  </section>
+
+  <!-- HIROSHIMA -->
+  <section id="hiroshima">
+    <div class="section-header">
+      <div class="section-kicker">Japón · 4ª etapa</div>
+      <h2 class="section-title">Hiroshima <em>広島</em></h2>
+      <div class="section-dates">31 julio – 1 agosto · 1 noche · The Knot Hiroshima</div>
+    </div>
+
+    <div class="alert blue">
+      <strong>Kioto → Hiroshima:</strong> Shinkansen Nozomi (~1h) o Hikari (~1h 20 min). Con JR Pass no puedes usar el Nozomi — usa el Hikari. Hiroshima está a solo 340 km de Kioto.
+    </div>
+
+    <div class="days">
+      <div class="day">
+        <div class="day-label">Mañana</div>
+        <div class="day-body">
+          <div class="day-title">Parque & Museo Memorial de la Paz</div>
+          <div class="day-desc">Dedica al menos 2–3 horas. El Museo Memorial es impactante y necesario. La Cúpula Genbaku (bomba atómica), junto al río, es Patrimonio de la UNESCO. Visita con respeto — es un lugar de reflexión y memoria.</div>
+        </div>
+      </div>
+      <div class="day">
+        <div class="day-label">Tarde</div>
+        <div class="day-body">
+          <div class="day-title">Miyajima <span class="badge badge-tip">Muy recomendado</span></div>
+          <div class="day-desc">Ferry ~30 min desde Hiroshima a la isla sagrada. Torii flotante del santuario Itsukushima (icónico al atardecer), ciervos salvajes que pasean libremente y Monte Misen. Con JR Pass, el ferry está incluido.</div>
+        </div>
+      </div>
+      <div class="day">
+        <div class="day-label">Noche</div>
+        <div class="day-body">
+          <div class="day-title">Okonomiyaki estilo Hiroshima</div>
+          <div class="day-desc">Okonomiyaki-mura: edificio de 3 plantas dedicado íntegramente al okonomiyaki local (con noodles soba, muy diferente al de Osaka). Una de las mejores experiencias gastronómicas del viaje.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OSAKA -->
+  <section id="osaka">
+    <div class="section-header">
+      <div class="section-kicker">Japón · 5ª etapa</div>
+      <h2 class="section-title">Osaka <em>大阪</em></h2>
+      <div class="section-dates">1 – 4 agosto · 3 noches · voco Osaka Central by IHG</div>
+    </div>
+
+    <div class="alert blue">
+      <strong>Hiroshima → Osaka:</strong> Shinkansen Nozomi (~45 min) o Hikari (~1h). Llegada a Shin-Osaka, desde donde el metro te lleva al centro. El hotel en Nishi-ku está a ~10 min en metro.
+    </div>
+
+    <div class="days">
+      <div class="day">
+        <div class="day-label">1 ago</div>
+        <div class="day-body">
+          <div class="day-title">Dotonbori — paraíso foodie</div>
+          <div class="day-desc">Takoyaki en Aizuya o Wanaka. Kushikatsu en Kushikatsu Daruma (regla de oro: no mojar dos veces en la salsa). El Glico Man y los neones del puente Ebisubashi para las fotos icónicas. Noche: Hozenji Yokocho, callejón de izakayas al amor de la piedra musgosa.</div>
+        </div>
+      </div>
+      <div class="day">
+        <div class="day-label">2 ago</div>
+        <div class="day-body">
+          <div class="day-title">Amerikamura & Shinsekai</div>
+          <div class="day-desc">Amerikamura por la mañana: moda urbana, vintage y streetwear japonés, tiendas de segunda mano. Tarde: Shinsekai, ambiente retro años 50, torre Tsutenkaku y más kushikatsu. Paseo por el parque Tennoji.</div>
+        </div>
+      </div>
+      <div class="day">
+        <div class="day-label">3 ago</div>
+        <div class="day-body">
+          <div class="day-title">Umeda & Omakase Sushi Akagi</div>
+          <div class="day-desc">Mañana: shopping en los grandes almacenes Hankyu y Hanshin de Umeda. Subida al Umeda Sky Building (mirador doble con escalera mecánica flotante — espectacular al atardecer). Noche: omakase en Sushi Akagi — reserva con meses de antelación vía Tableall o Pocket Concierge.</div>
+        </div>
+      </div>
+      <div class="day">
+        <div class="day-label">4 ago</div>
+        <div class="day-body">
+          <div class="day-title">Vuelo a Da Nang <span class="badge badge-warn">Vuelo 14:30 KIX</span></div>
+          <div class="day-desc">Llega al aeropuerto ~12:00. Transporte: tren Nankai Limited Express "Rapi:t" desde Namba hasta KIX (~35 min, ~1.490¥) o JR Haruka (~1h). Mañana libre para el último konbini o duty free.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sep-label">Gastronomía & compras Osaka</div>
+    <div class="food-grid">
+      <div class="food-card"><div class="food-name">Kuromon Ichiba Market</div><div class="food-desc">El mercado de la cocina de Osaka. Sashimi, cangrejo, wagyu en palito y ostras frescas. Perfecto para el desayuno del día 1.</div></div>
+      <div class="food-card"><div class="food-name">Sushi Akagi — Omakase</div><div class="food-desc">Reserva online meses antes vía Tableall o Pocket Concierge. Precio ~¥30.000–40.000 por persona. Altamente recomendado.</div></div>
+      <div class="food-card"><div class="food-name">Relojes en Shinsaibashi</div><div class="food-desc">Varias tiendas especializadas en relojes de lujo de segunda mano en el barrio de Shinsaibashi. Complementa las compras de Tokio.</div></div>
+      <div class="food-card"><div class="food-name">Okonomiyaki Mizuno</div><div class="food-desc">Estilo Osaka (revuelto, más cremoso que el de Hiroshima). En Dotonbori, institución desde 1945.</div></div>
+    </div>
+  </section>
+
+  <!-- DA NANG -->
+  <section id="danang">
+    <div class="section-header">
+      <div class="section-kicker">Vietnam · 1ª etapa</div>
+      <h2 class="section-title">Da Nang <em>& Hoi An</em></h2>
+      <div class="section-dates">4 – 8 agosto · Son Tra Beach Resort & Spa</div>
+    </div>
+
+    <div class="days">
+      <div class="day">
+        <div class="day-label">4–6 ago</div>
+        <div class="day-body">
+          <div class="day-title">Relax en el resort</div>
+          <div class="day-desc">Piscina, spa y playa de My Khe (nombrada una de las mejores playas de Asia). El resort organiza actividades: kayak, snorkel y clases de cocina vietnamita.</div>
+        </div>
+      </div>
+      <div class="day">
+        <div class="day-label">7 ago</div>
+        <div class="day-body">
+          <div class="day-title">Hoi An — Ciudad Antigua <span class="badge badge-tip">Patrimonio UNESCO</span></div>
+          <div class="day-desc">~30 min en taxi desde Da Nang (~200.000 VND). Farolillos, casas coloniales y canales. Mercado Central para barganear telas y especias. Las sastrerías son excepcionales — lleva fotos de referencia, entregan en 24–48h (Yali Couture y A Dong Silk son las más recomendadas, 50–150 USD por traje).</div>
+        </div>
+      </div>
+      <div class="day">
+        <div class="day-label">8 ago</div>
+        <div class="day-body">
+          <div class="day-title">Mañana libre · Vuelo nocturno a Hanoi <span class="badge badge-warn">22:25</span></div>
+          <div class="day-desc">Tarde de playa. Cena en Da Nang: Mi Quang (noodles con cúrcuma, gambas y cacahuetes) en el mercado Bac My An.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sep-label">Qué ver y probar en Hoi An</div>
+    <div class="food-grid">
+      <div class="food-card"><div class="food-name">Farolillos de luna llena</div><div class="food-desc">Los farolillos se encienden cada noche en la ciudad antigua. La noche de luna llena del 2 de agosto de 2026 es la más especial si podéis adelantar la visita.</div></div>
+      <div class="food-card"><div class="food-name">Sastrería a medida</div><div class="food-desc">Yali Couture y A Dong Silk son las mejor valoradas. Lleva referencias visuales. Entrega en 24–48h por 50–150 USD por prenda.</div></div>
+      <div class="food-card"><div class="food-name">Cao Lau</div><div class="food-desc">El plato típico de Hoi An: noodles gruesos con cerdo y hierbas frescas. Solo existe aquí — el agua local es parte de la receta. En el Mercado Central.</div></div>
+      <div class="food-card"><div class="food-name">Banh Mi Phuong</div><div class="food-desc">Considerado el mejor banh mi del mundo (New York Times, Anthony Bourdain). Cola inevitable pero el sándwich es extraordinario.</div></div>
+    </div>
+  </section>
+
+  <!-- HANOI -->
+  <section id="hanoi">
+    <div class="section-header">
+      <div class="section-kicker">Vietnam · 2ª etapa</div>
+      <h2 class="section-title">Hanoi <em>Hà Nội</em></h2>
+      <div class="section-dates">8 – 12 agosto · The Legend Hanoi Hotel</div>
+    </div>
+
+    <div class="alert">
+      <strong>⚠ Ojo con los terminales en Hanoi:</strong> La llegada fue por T1 pero el vuelo de vuelta sale desde T2. Son edificios separados en el aeropuerto Noi Bai. Avisa al hotel para que el transfer de salida te lleve al terminal correcto.
+    </div>
+
+    <div class="days">
+      <div class="day">
+        <div class="day-label">8 ago</div>
+        <div class="day-body">
+          <div class="day-title">Llegada a Hanoi <span class="badge badge-info">23:45 · transfer incluido</span></div>
+          <div class="day-desc">El hotel The Legend gestiona el transfer desde el aeropuerto. Llegada al hotel cerca de la medianoche.</div>
+        </div>
+      </div>
+      <div class="day">
+        <div class="day-label">9 ago</div>
+        <div class="day-body">
+          <div class="day-title">Mausoleo Ho Chi Minh & Old Quarter</div>
+          <div class="day-desc">Mausoleo abre a las 7:30h. Lleva ropa respetuosa (hombros y rodillas cubiertos). Después: Templo de la Literatura y lago Hoan Kiem. Old Quarter: las famosas 36 calles gremiales, cada una especializada en un oficio.</div>
+        </div>
+      </div>
+      <div class="day">
+        <div class="day-label">10 ago</div>
+        <div class="day-body">
+          <div class="day-title">Night Market & Regateo</div>
+          <div class="day-desc">Dong Xuan Market para ropa, recuerdos y cultura del regateo. Hang Dao Night Market (abre viernes–domingo). Dong Khoi para marcas imitación. Comienza siempre ofreciendo el 30–40% del precio pedido.</div>
+        </div>
+      </div>
+      <div class="day">
+        <div class="day-label">11 ago</div>
+        <div class="day-body">
+          <div class="day-title">Gastronomía & Barrio Francés</div>
+          <div class="day-desc">Desayuno de pho en Pho Gia Truyen (abre a las 6:30h, llegar antes). Paseo por el elegante barrio colonial francés. Taller de cocina vietnamita opcional. Última noche: cena en Cha Ca La Vong (desde 1871, solo sirven un plato — chả cá a la brasa con hierbas frescas).</div>
+        </div>
+      </div>
+      <div class="day">
+        <div class="day-label">12 ago</div>
+        <div class="day-body">
+          <div class="day-title">Vuelo de vuelta a Madrid <span class="badge badge-red">T2 · 19:30</span></div>
+          <div class="day-desc">Salida desde Terminal 2 (diferente a la llegada). Llega al aeropuerto ~17:30. Transfer gestionado por el hotel — confirma el terminal al hacer el check-in. Llegada a Madrid el 13 de agosto a las 7:35.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sep-label">Gastronomía imprescindible en Hanoi</div>
+    <div class="food-grid">
+      <div class="food-card"><div class="food-name">Pho Gia Truyen</div><div class="food-desc">El pho más famoso de Hanoi. Cola desde las 6h, abre a las 6:30. Tazones de caldo de buey perfectos, servidos desde 1955.</div></div>
+      <div class="food-card"><div class="food-name">Cha Ca La Vong</div><div class="food-desc">Desde 1871, solo sirven un plato: chả cá, pescado a la brasa con cúrcuma, eneldo y cacahuetes. Uno de los más únicos del mundo.</div></div>
+      <div class="food-card"><div class="food-name">Bun Cha Obama</div><div class="food-desc">El restaurante donde Obama cenó con Anthony Bourdain en 2016. Bun cha (cerdo a la brasa con fideos) a 5 USD. En el Old Quarter.</div></div>
+      <div class="food-card"><div class="food-name">Bia hoi (cerveza fresca)</div><div class="food-desc">La cerveza artesanal más barata del mundo (~0,25 USD). Las esquinas con taburetes de plástico del Old Quarter son el lugar más auténtico para tomarla.</div></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <strong>Japón & Vietnam · Verano 2026</strong><br>
+  21 julio – 13 agosto · Madrid → Tokio → Hanoi → Madrid
+</footer>
+
+</body>
+</html>
