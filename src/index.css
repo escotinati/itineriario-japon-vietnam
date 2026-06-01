@@ -41,11 +41,19 @@
   --sans:      'Inter', system-ui, -apple-system, sans-serif;
   --display:   'Sora', system-ui, sans-serif;
 
-  /* Escala tipográfica limpia — FIX: eliminados 10.5, 12.5, 13.5 */
-  --text-xs:   11px;
-  --text-sm:   13px;
-  --text-base: 15px;
-  --text-md:   17px;
+  --text-xs:   12px;
+  --text-sm:   14px;
+  --text-base: 16px;
+  --text-md:   18px;
+}
+
+@media (max-width: 480px) {
+  :root {
+    --text-xs:   13px;
+    --text-sm:   15px;
+    --text-base: 16px;
+    --text-md:   19px;
+  }
 }
 
 html { scroll-behavior: smooth; }
@@ -134,7 +142,7 @@ body {
   margin-top: 2.5rem;
 }
 .hero-tag {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
   padding: 5px 14px;
   border: 1px solid rgba(255,255,255,0.15);
@@ -237,7 +245,7 @@ nav.main-nav::-webkit-scrollbar { display: none; }
   margin-top: 10px;
 }
 .filter-tab {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
   font-family: var(--sans);
   padding: 4px 12px;
@@ -439,7 +447,7 @@ nav.main-nav::-webkit-scrollbar { display: none; }
 }
 
 .custom-entry-cat {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -640,9 +648,7 @@ section:last-child { border-bottom: none; }
   background: var(--surface);
   border: 1.5px solid var(--border);
   border-radius: var(--radius);
-  padding: 16px 20px;
-  display: flex;
-  gap: 16px;
+  overflow: hidden;
   transition: border-color 0.15s, box-shadow 0.15s;
 }
 .day:hover {
@@ -650,19 +656,26 @@ section:last-child { border-bottom: none; }
   box-shadow: var(--shadow-sm);
 }
 
+.day-header {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 14px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  text-align: left;
+}
+
 .day-label {
   font-size: var(--text-sm);
   font-weight: 600;
   color: var(--ink-4);
   min-width: 54px;
-  padding-top: 2px;
+  padding-top: 3px;
   letter-spacing: 0.02em;
   flex-shrink: 0;
-}
-
-@media (max-width: 480px) {
-  .day { flex-direction: column; gap: 6px; }
-  .day-label { min-width: unset; padding-top: 0; }
 }
 
 .day-body { flex: 1; min-width: 0; }
@@ -671,7 +684,6 @@ section:last-child { border-bottom: none; }
   font-size: var(--text-base);
   font-weight: 600;
   color: var(--ink);
-  margin-bottom: 5px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -679,11 +691,34 @@ section:last-child { border-bottom: none; }
   line-height: 1.4;
 }
 
-/* FIX: 13.5 → 14px (--text-sm + 1) usando var */
+.day-chevron {
+  color: var(--ink-muted);
+  flex-shrink: 0;
+  padding-top: 3px;
+  transition: transform 0.22s ease;
+}
+.day-chevron-open { transform: rotate(180deg); }
+
+.day-collapse {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s ease;
+}
+.day-open .day-collapse { grid-template-rows: 1fr; }
+
+.day-collapse-inner { overflow: hidden; min-height: 0; }
+
 .day-desc {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--ink-3);
   line-height: 1.65;
+  padding: 0 20px 14px 90px;
+}
+
+@media (max-width: 480px) {
+  .day-header { padding: 12px 16px; }
+  .day-label { min-width: unset; }
+  .day-desc { padding: 0 16px 12px 16px; }
 }
 
 /* ── BADGES ────────────────────────────────── */
@@ -738,19 +773,19 @@ section:last-child { border-bottom: none; }
 }
 
 /* ── FLIGHTS ───────────────────────────────── */
-.flights { display: flex; flex-direction: column; gap: 8px; }
+.flights { display: flex; flex-direction: column; gap: 12px; }
 
 .flight {
   background: var(--surface);
-  border: 1.5px solid var(--border);
+  border: 1.5px solid var(--border-2);
   border-radius: var(--radius);
-  padding: 18px 22px;
+  padding: 22px 28px;
   display: flex;
   align-items: center;
 }
 
 @media (max-width: 480px) {
-  .flight { padding: 14px 16px; }
+  .flight { padding: 16px 18px; }
   .f-time { font-size: 18px !important; }
 }
 
@@ -802,7 +837,7 @@ section:last-child { border-bottom: none; }
   text-transform: uppercase;
 }
 .hotel-name { font-size: var(--text-base); font-weight: 600; color: var(--ink); margin-bottom: 3px; }
-.hotel-addr { font-size: 12px; color: var(--ink-3); line-height: 1.5; }
+.hotel-addr { font-size: 13px; color: var(--ink-3); line-height: 1.5; }
 .hotel-addr-link {
   display: inline-flex;
   align-items: center;
@@ -870,60 +905,63 @@ section:last-child { border-bottom: none; }
 .sacc-body { padding-top: 1.5rem; }
 
 /* ── ACCORDION L2 — bloque interior ──────── */
-.bacc { margin-top: 0; }
+.bacc {
+  border: 1.5px solid var(--border-2);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-top: 10px;
+}
 
 .bacc-trigger {
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 8px;
-  background: none;
+  gap: 10px;
+  background: var(--bg);
   border: none;
-  padding: 1.5rem 0 0;
+  padding: 14px 18px;
   cursor: pointer;
-  color: var(--ink-4);
+  color: var(--ink-2);
   font-family: var(--sans);
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
   text-align: left;
-  transition: color 0.15s;
+  transition: background 0.15s, color 0.15s;
 }
-.bacc-trigger:hover { color: var(--ink-2); }
-.bacc-trigger:hover .bacc-line { background: var(--border-2); }
+.bacc-trigger:hover {
+  background: var(--surface);
+  color: var(--ink);
+}
 
-.bacc-title { white-space: nowrap; flex-shrink: 0; }
+.bacc-title { flex: 1; white-space: nowrap; }
 
 .bacc-count {
-  background: var(--bg);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 99px;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
-  padding: 1px 7px;
-  /* FIX: --ink-muted para el contador (decorativo) */
+  padding: 1px 8px;
   color: var(--ink-muted);
   flex-shrink: 0;
 }
 
-.bacc-line {
-  flex: 1;
-  height: 1px;
-  background: var(--border);
-  transition: background 0.15s;
+.bacc-line { display: none; }
+
+.bacc-body {
+  padding: 16px 18px;
+  border-top: 1px solid var(--border);
 }
 
-.bacc-body { padding-top: 0.75rem; }
-
 /* ── TRANSPORT CARDS (trenes) ─────────────── */
-.transport-list { display: flex; flex-direction: column; gap: 8px; }
+.transport-list { display: flex; flex-direction: column; gap: 12px; }
 
 .transport-card {
   background: var(--surface);
-  border: 1.5px solid var(--border);
+  border: 1.5px solid var(--border-2);
   border-radius: var(--radius-sm);
-  padding: 14px 18px;
+  padding: 18px 22px;
   transition: border-color 0.15s, box-shadow 0.15s;
 }
 .transport-card:hover {
@@ -970,7 +1008,7 @@ section:last-child { border-bottom: none; }
 /* FIX: --ink-muted para separador decorativo */
 .transport-sep { color: var(--ink-muted); }
 .transport-notes {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--ink-4);
   line-height: 1.55;
   padding-top: 6px;
@@ -979,14 +1017,13 @@ section:last-child { border-bottom: none; }
 }
 
 /* ── METRO CARDS ──────────────────────────── */
-.metro-grid { display: flex; flex-direction: column; gap: 10px; }
+.metro-grid { display: flex; flex-direction: column; gap: 12px; }
 
 .metro-card {
   background: var(--surface);
-  border: 1.5px solid var(--border);
+  border: 1.5px solid var(--border-2);
   border-radius: var(--radius-sm);
-  padding: 16px 18px;
-  /* FIX: añadido hover que faltaba */
+  padding: 20px 22px;
   transition: border-color 0.15s, box-shadow 0.15s;
 }
 .metro-card:hover {
@@ -1100,7 +1137,7 @@ section:last-child { border-bottom: none; }
 }
 
 .dest-tile-kicker {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -1151,7 +1188,7 @@ section:last-child { border-bottom: none; }
   display: flex;
   align-items: center;
   gap: 4px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   color: var(--ink-muted);
 }
@@ -1215,9 +1252,10 @@ section:last-child { border-bottom: none; }
 }
 
 .dest-tile-exp-body {
-  padding: 4px 24px 28px;
+  padding: 28px 24px 28px;
 }
-.dest-tile-exp-body .bacc-trigger { padding-top: 1.25rem; }
+.dest-tile-exp-body .bacc { margin-top: 0; }
+.dest-tile-exp-body .bacc + .bacc { margin-top: 10px; }
 
 @media (max-width: 600px) {
   .dest-tile-exp-header { padding: 16px; }
@@ -1230,7 +1268,7 @@ footer {
   color: rgba(255,255,255,0.35);
   text-align: center;
   padding: 2.5rem;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 400;
   line-height: 2;
 }
