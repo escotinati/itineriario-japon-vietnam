@@ -1,9 +1,11 @@
 import Alert from './Alert'
 import DayCard from './DayCard'
 import { SectionAccordion, BlockAccordion } from './Accordion'
+import { dayRoutes } from '../data/maps'
 
 export default function DestinationSection({ dest, defaultOpen = false }) {
   const { id, country, stage, name, subtitle, dates, alerts, days, extras, food } = dest
+  const routes = dayRoutes[id] || []
 
   return (
     <section id={id}>
@@ -18,7 +20,9 @@ export default function DestinationSection({ dest, defaultOpen = false }) {
 
         <BlockAccordion title="Itinerario" count={days.length} defaultOpen={true}>
           <div className="days">
-            {days.map((d, i) => <DayCard key={i} {...d} />)}
+            {days.map((d, i) => (
+              <DayCard key={i} {...d} routeUrl={routes[i] || null} />
+            ))}
           </div>
         </BlockAccordion>
 

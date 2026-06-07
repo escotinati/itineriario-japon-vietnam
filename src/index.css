@@ -715,10 +715,33 @@ section:last-child { border-bottom: none; }
   padding: 0 20px 14px 90px;
 }
 
+.day-maps-wrap {
+  padding: 10px 20px 4px 90px;
+}
+.day-maps-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--blue-text);
+  text-decoration: none;
+  background: var(--blue-bg);
+  border: 1px solid #BFDBFE;
+  border-radius: 99px;
+  padding: 4px 12px;
+  transition: background 0.15s, border-color 0.15s;
+}
+.day-maps-link:hover {
+  background: #DBEAFE;
+  border-color: #93C5FD;
+}
+
 @media (max-width: 480px) {
   .day-header { padding: 12px 16px; }
   .day-label { min-width: unset; }
   .day-desc { padding: 0 16px 12px 16px; }
+  .day-maps-wrap { padding: 10px 16px 4px 16px; }
 }
 
 /* ── BADGES ────────────────────────────────── */
@@ -1273,3 +1296,69 @@ footer {
   line-height: 2;
 }
 footer strong { color: rgba(255,255,255,0.65); font-weight: 600; }
+
+/* ── JR PASS COMPARATOR ─────────────────────── */
+.jrc-table-row {
+  display: grid;
+  grid-template-columns: 1fr 70px 90px 90px;
+  gap: 8px;
+}
+.jrc-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+/* ── MOBILE GLOBAL (≤480px · iPhone 15 Pro) ── */
+@media (max-width: 480px) {
+  /* Layout principal */
+  main { padding: 0 1rem 2.5rem; }
+
+  /* Hero: reducir padding vertical */
+  .hero { padding: 2.5rem 1.25rem 2rem; }
+
+  /* Secciones: menos espacio vertical */
+  section { padding: 2rem 0; }
+  .section-header { margin-bottom: 1.25rem; }
+
+  /* Barra de búsqueda */
+  .search-bar-wrap { padding: 10px 1rem; }
+  .search-results  { padding: 1rem; }
+
+  /* Acordeones: padding más compacto */
+  .bacc-trigger { padding: 12px 16px; }
+  .bacc-body    { padding: 14px 16px; }
+
+  /* Touch targets: mínimo 36px para botones pequeños */
+  .dest-tile-close {
+    width: 36px;
+    height: 36px;
+  }
+  .custom-entry-remove {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* JR Pass Comparator: tabla de 3 columnas (ocultar fecha) */
+  .jrc-table-row { grid-template-columns: 1fr 78px 78px; }
+  .jrc-col-date  { display: none; }
+
+  /* JR Pass: comparativa apilada verticalmente */
+  .jrc-compare { grid-template-columns: 1fr; }
+
+  /* Vuelos: asegurar que el área central no aplaste */
+  .f-mid { padding: 0 8px; }
+
+  /* Formulario añadir nota: botones a ancho completo en fila */
+  .aef-actions {
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
+  .aef-btn-cancel,
+  .aef-btn-submit {
+    width: 100%;
+    text-align: center;
+    padding: 10px 16px;
+  }
+}

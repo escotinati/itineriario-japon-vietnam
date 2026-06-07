@@ -1,6 +1,7 @@
 import Alert from './Alert'
 import DayCard from './DayCard'
 import { BlockAccordion } from './Accordion'
+import { dayRoutes } from '../data/maps'
 
 const COUNTRY_CLASS = { 'Japón': 'tile-japan', 'Vietnam': 'tile-vietnam' }
 
@@ -107,6 +108,7 @@ function CustomEntry({ entry, onRemove }) {
 // ─── Tarjeta expandida ──────────────────────────────────────────────────────
 function ExpandedTile({ dest, customEntries, onCollapse, onRemoveEntry }) {
   const myEntries = customEntries.filter(e => e.destId === dest.id)
+  const routes = dayRoutes[dest.id] || []
 
   return (
     <div className={`dest-tile-expanded ${COUNTRY_CLASS[dest.country] || ''}`}>
@@ -139,7 +141,9 @@ function ExpandedTile({ dest, customEntries, onCollapse, onRemoveEntry }) {
 
         <BlockAccordion title="Itinerario" count={dest.days.length} defaultOpen={myEntries.length === 0}>
           <div className="days">
-            {dest.days.map((d, i) => <DayCard key={i} {...d} />)}
+            {dest.days.map((d, i) => (
+              <DayCard key={i} {...d} routeUrl={routes[i] || null} />
+            ))}
           </div>
         </BlockAccordion>
 

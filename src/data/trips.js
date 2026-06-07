@@ -148,12 +148,14 @@ export const destinations = [
       {
         label: '22 jul',
         title: 'Llegada a Tokio',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Park+Hotel+Tokyo+Shiodome+Minato-ku',
         desc: 'Aterrizaje 19:10 en Narita T2. Check-in en el Park Hotel Tokyo. Cena ligera en un konbini cercano (7-Eleven o Lawson) — primera experiencia konbini del viaje: onigiri, tamagoyaki y matcha latte.',
         tags: [],
       },
       {
         label: '23 jul',
         title: 'Shibuya & Harajuku',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Harajuku+Shibuya+Tokyo+Japan',
         desc: `
 <p style="margin-bottom:10px">Empieza en <strong>Harajuku</strong> a primera hora — se llena por las tardes. Por la tarde cruza a <strong>Shibuya</strong>.</p>
 
@@ -199,6 +201,7 @@ export const destinations = [
       {
         label: '24 jul',
         title: 'Asakusa & Akihabara',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Senso-ji+Temple+Asakusa+Tokyo',
         desc: `
 <p style="margin-bottom:10px">Contraste perfecto en un solo día: Asakusa tradicional y sereno por la mañana, Akihabara caótico y estimulante por la tarde. Están a <strong>10 min en metro</strong> el uno del otro (línea Ginza).</p>
 
@@ -250,6 +253,7 @@ export const destinations = [
       {
         label: '25 jul',
         title: 'Ginza & Odaiba + Omakase',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Ginza+Tokyo+Japan',
         desc: `
 <p style="margin-bottom:10px">Conexión geográfica perfecta: Ginza está en el centro y desde allí llegas a Odaiba en <strong>15 minutos</strong>. Todo Ginza se recorre a pie — las calles principales forman una cuadrícula muy cómoda.</p>
 
@@ -289,6 +293,7 @@ export const destinations = [
       {
         label: '26 jul',
         title: 'Shinjuku → Hakone',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Shinjuku+Gyoen+National+Garden+Tokyo',
         desc: `
 <p style="margin-bottom:10px">Día de viaje a Hakone con mañana libre en Shinjuku. El Hotel Kajikaso está a <strong>5 minutos a pie</strong> de la estación Hakone-Yumoto — uno de los accesos más cómodos de todo Hakone.</p>
 
@@ -353,6 +358,7 @@ export const destinations = [
       {
         label: 'Mañana',
         title: 'Hakone Loop — Inicio',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Owakudani+Hakone+Kanagawa+Japan',
         desc: `
 <p style="margin-bottom:10px">El loop se hace en <strong>sentido horario</strong>: Yumoto → tren de montaña → Gora → funicular → teleférico → Owakudani → Togendai → barco pirata → Moto-Hakone → autobús de vuelta. Todo cubierto por el <strong>Hakone Free Pass</strong>.</p>
 
@@ -380,6 +386,7 @@ export const destinations = [
       {
         label: 'Mediodía',
         title: 'Lago Ashi — Barco Pirata & Santuario',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Lake+Ashi+Hakone+Kanagawa+Japan',
         desc: `
 <p style="margin-bottom:10px">Desde Togendai embarca en el <strong>barco pirata</strong> para cruzar el Lago Ashi. El lago ocupa parte de un antiguo cráter volcánico y en días despejados el Monte Fuji emerge sobre la orilla occidental.</p>
 
@@ -406,6 +413,7 @@ export const destinations = [
       {
         label: 'Tarde',
         title: 'Yosegi Zaiku — Artesanía de Madera',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Hakone-Yumoto+Kanagawa+Japan',
         desc: `
 <p style="margin-bottom:10px">De vuelta en Yumoto, dedica un rato a la artesanía más característica de Hakone: el <strong>Yosegi Zaiku</strong>, mosaicos de madera con patrones geométricos elaborados combinando distintas maderas naturales. Declarada artesanía tradicional por el Ministerio de Industria japonés en 1984.</p>
 
@@ -421,6 +429,7 @@ export const destinations = [
       {
         label: 'Noche',
         title: 'Onsen & Cena Kaiseki',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Hotel+Kajikaso+Hakone-Yumoto+Kanagawa',
         desc: `
 <p style="margin-bottom:10px">La razón principal de quedarse a dormir en Hakone: el onsen al caer el sol y la cena kaiseki de temporada.</p>
 
@@ -452,6 +461,7 @@ export const destinations = [
       {
         label: '27 jul',
         title: 'Hakone → Kioto · Llegada',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Pontocho+Nakagyo-ku+Kyoto+Japan',
         desc: `
 <p style="margin-bottom:10px">El Royal Park Hotel Kyoto Sanjo está en una ubicación inmejorable: a <strong>5 min a pie</strong> de las estaciones de metro Kyoto Shiyakusho-mae y Sanjo Keihan, y a 5 min a pie de Pontocho. El equipaje se puede dejar en el hotel al llegar antes del check-in (15:00h).</p>
 
@@ -484,6 +494,7 @@ export const destinations = [
       {
         label: '28 jul',
         title: 'Higashiyama & Gion',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Kiyomizudera+Higashiyama+Kyoto+Japan',
         desc: `
 <p style="margin-bottom:10px">Plan perfecto para un día: Higashiyama <strong>a primera hora</strong> cuando está vacío, bajando desde Kiyomizudera por Sannenzaka y Ninenzaka hacia Gion. Al atardecer, Hanamikoji se transforma y las probabilidades de ver geiko y maiko se disparan.</p>
 
@@ -528,6 +539,7 @@ export const destinations = [
       {
         label: '29 jul',
         title: 'Arashiyama & Camino del Filósofo',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Arashiyama+Bamboo+Grove+Kyoto+Japan',
         desc: `
 <p style="margin-bottom:10px">Arashiyama a primera hora para ver el bosque de bambú sin masificaciones, luego el Camino del Filósofo por la tarde cuando Arashiyama se llena y Okazaki se vacía. Son los dos paseos a pie más bonitos de Kioto.</p>
 
@@ -567,6 +579,7 @@ export const destinations = [
       {
         label: '30 jul',
         title: 'Fushimi Inari, Kinkaku-ji & Teramachi',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Fushimi+Inari+Shrine+Kyoto+Japan',
         desc: `
 <p style="margin-bottom:10px">El día más intenso de Kioto: madrugada mística en Fushimi Inari, mercado de Nishiki al mediodía y el Pabellón Dorado por la tarde. Un día que resume tres caras radicalmente distintas de la ciudad.</p>
 
@@ -609,12 +622,14 @@ export const destinations = [
       {
         label: 'Extra',
         title: 'Nijo Castle',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Nijo+Castle+Kyoto+Japan',
         desc: 'Castillo del shogunato Tokugawa con los famosos suelos "nightingale" (crujen para detectar intrusos). La arquitectura político-militar más importante de Kioto. A 15 min a pie del hotel.',
         tags: [{ type: 'tip', text: 'Muy cerca del hotel' }],
       },
       {
         label: 'Extra',
         title: 'Fushimi Sake District',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Fushimi+Sake+District+Gekkeikan+Kyoto',
         desc: 'En el mismo barrio de Fushimi Inari, las bodegas centenarias de Gekkeikan. Visita y cata de sake fresco directamente del tonel. Combinar con la visita al santuario.',
         tags: [],
       },
@@ -643,6 +658,7 @@ export const destinations = [
       {
         label: '31 jul',
         title: 'Kioto → Hiroshima · Llegada',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Hiroshima+Peace+Memorial+Park+Japan',
         desc: `
 <p style="margin-bottom:10px">Los dos hoteles tienen una posición excelente: el Royal Park está a 20 min de Kyoto Station y THE KNOT está a <strong>7 min a pie del Parque de la Paz</strong>. Con salida a las 9h llegas a Hiroshima sobre las 11:15h — con toda la tarde para la visita más importante del viaje.</p>
 
@@ -681,6 +697,7 @@ export const destinations = [
       {
         label: 'Tarde',
         title: 'Miyajima — Isla Sagrada',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Itsukushima+Shrine+Miyajima+Hiroshima',
         desc: `
 <p style="margin-bottom:10px">Miyajima es una de las tres vistas más bellas de Japón desde el siglo XVII. El día 1 de agosto tiene sentido dedicarle el día entero — con Hiroshima ya visto el día anterior, Miyajima se disfruta sin prisas.</p>
 
@@ -729,6 +746,7 @@ export const destinations = [
       {
         label: 'Noche',
         title: 'Okonomiyaki estilo Hiroshima',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Okonomimura+Naka-ku+Hiroshima+Japan',
         desc: 'Okonomiyaki-mura: edificio de 3 plantas dedicado íntegramente al okonomiyaki local (con noodles soba, muy diferente al de Osaka). Una de las mejores experiencias gastronómicas del viaje.',
         tags: [],
       },
@@ -752,6 +770,7 @@ export const destinations = [
       {
         label: '1 ago',
         title: 'Llegada a Osaka — Dotonbori',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Dotonbori+Namba+Osaka+Japan',
         desc: `
 <p style="margin-bottom:10px">Llegada desde Hiroshima ~14:15h. El voco Osaka Central está en Kyomachibori, un barrio tranquilo junto al río, a 10 min en metro del centro. Tarde libre para estrenar Osaka con la zona más intensa de la ciudad.</p>
 
@@ -781,6 +800,7 @@ export const destinations = [
       {
         label: '2 ago',
         title: 'Amerikamura & Shinsekai',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Amerikamura+Shinsaibashi+Osaka+Japan',
         desc: `
 <p style="margin-bottom:10px">Dos barrios completamente distintos que juntos muestran el mejor contraste de Osaka: la cultura urbana y el vintage de Amerikamura por la mañana, el ambiente retro y popular de Shinsekai por la tarde.</p>
 
@@ -810,6 +830,7 @@ export const destinations = [
       {
         label: '3 ago',
         title: 'Umeda & Omakase Sushi Akagi',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Umeda+Sky+Building+Osaka+Japan',
         desc: `
 <p style="margin-bottom:10px">El día más premium del viaje: shopping de lujo en Umeda por la mañana, el mirador más espectacular de Osaka al atardecer y la experiencia gastronómica definitiva por la noche.</p>
 
@@ -837,6 +858,7 @@ export const destinations = [
       {
         label: '4 ago',
         title: 'Vuelo a Da Nang',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Kansai+International+Airport+KIX+Osaka',
         desc: 'Llega al aeropuerto ~12:00. Transporte: tren Nankai Limited Express "Rapi:t" desde Namba hasta KIX (~35 min, ~1.490¥) o JR Haruka (~1h). Mañana libre para el último konbini o duty free.',
         tags: [{ type: 'warn', text: 'Vuelo 14:30 KIX' }],
       },
@@ -860,6 +882,7 @@ export const destinations = [
       {
         label: '4–6 ago',
         title: 'Llegada a Da Nang · Relax en el resort',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Son+Tra+Beach+Resort+Spa+Da+Nang+Vietnam',
         desc: `
 <p style="margin-bottom:10px">Llegada al aeropuerto de Da Nang a las <strong>19:50h</strong>. Coche privado incluido que lleva directamente al Son Tra Beach Resort & Spa — sin buscar transporte al llegar.</p>
 
@@ -882,6 +905,7 @@ export const destinations = [
       {
         label: '7 ago',
         title: 'Hoi An — Ciudad Antigua',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Hoi+An+Ancient+Town+Vietnam',
         desc: `
 <p style="margin-bottom:10px">~30 min en taxi desde Da Nang (~200.000 VND). Patrimonio de la Humanidad por la UNESCO desde 1999 — casas coloniales, templos chinos, el río Thu Bon y los farolillos más famosos de Vietnam. Ve por la mañana para evitar las oleadas de turistas que llegan después del mediodía.</p>
 
@@ -920,6 +944,7 @@ export const destinations = [
       {
         label: '8 ago',
         title: 'Mañana libre · Vuelo nocturno a Hanoi',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=My+Khe+Beach+Da+Nang+Vietnam',
         desc: `
 <p style="margin-bottom:10px">Mañana tranquila en Da Nang antes del vuelo nocturno. Última tarde de resort, cena temprana y aeropuerto.</p>
 
@@ -964,6 +989,7 @@ export const destinations = [
       {
         label: '8 ago',
         title: 'Llegada a Hanoi',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=The+Legend+Hanoi+Hotel+Ngo+Quyen+Hoan+Kiem',
         desc: `
 <p style="margin-bottom:10px">Llegada al aeropuerto Noi Bai a las <strong>23:45h</strong>. Coche privado de The Legend esperando en la zona de llegadas de T1.</p>
 
@@ -980,6 +1006,7 @@ export const destinations = [
       {
         label: '9 ago',
         title: 'Mausoleo Ho Chi Minh & Old Quarter',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Ho+Chi+Minh+Mausoleum+Ba+Dinh+Hanoi+Vietnam',
         desc: `
 <p style="margin-bottom:10px">El día más histórico de Hanoi: mañana institucional en el barrio del Mausoleo y tarde perdiéndose por el laberinto del Old Quarter.</p>
 
@@ -1006,6 +1033,7 @@ export const destinations = [
       {
         label: '10 ago',
         title: 'Mercado Nocturno & Tiendas Fake',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Dong+Xuan+Market+Hoan+Kiem+Hanoi+Vietnam',
         desc: `
 <p style="margin-bottom:10px">El día de las compras: mañana en el mercado más grande de Hanoi, tarde explorando las tiendas de imitaciones y noche en el mercado nocturno del Old Quarter.</p>
 
@@ -1035,6 +1063,7 @@ export const destinations = [
       {
         label: '11 ago',
         title: 'Gastronomía, Prisión Hoa Lo & Barrio Francés',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Hoa+Lo+Prison+Museum+Hanoi+Vietnam',
         desc: `
 <p style="margin-bottom:10px">Último día completo en Hanoi. Desayuno histórico, prisión colonial por la mañana, barrio francés por la tarde y la mejor cena de Vietnam por la noche.</p>
 
@@ -1067,6 +1096,7 @@ export const destinations = [
       {
         label: '12 ago',
         title: 'Vuelo de vuelta a Madrid',
+        mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Noi+Bai+International+Airport+T2+Hanoi+Vietnam',
         desc: `
 <p style="margin-bottom:10px">El vuelo internacional sale a las <strong>19:30h desde T2</strong>. Para vuelos internacionales en Hanoi se recomienda llegar <strong>3 horas antes</strong> — las colas de inmigración y seguridad pueden ser muy largas. El coche privado del hotel sale a las <strong>16:00h</strong> como máximo.</p>
 

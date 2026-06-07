@@ -52,26 +52,20 @@ function JRPassComparator() {
         marginBottom: 12
       }}>
         {/* Cabecera tabla */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 70px 90px 90px',
-          gap: 8,
+        <div className="jrc-table-row" style={{
           padding: '8px 14px',
           background: 'var(--bg)',
           borderBottom: '1px solid var(--border)'
         }}>
           <span style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.08em', color: 'var(--ink-4)' }}>Trayecto</span>
-          <span style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.08em', color: 'var(--ink-4)' }}>Fecha</span>
+          <span className="jrc-col-date" style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.08em', color: 'var(--ink-4)' }}>Fecha</span>
           <span style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.08em', color: 'var(--ink-4)', textAlign: 'right' }}>1 persona</span>
           <span style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.08em', color: 'var(--ink-4)', textAlign: 'right' }}>2 personas</span>
         </div>
 
         {/* Filas */}
         {trayectos.map((t, i) => (
-          <div key={i} style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 70px 90px 90px',
-            gap: 8,
+          <div key={i} className="jrc-table-row" style={{
             padding: '9px 14px',
             borderBottom: i < trayectos.length - 1 ? '1px solid var(--border)' : 'none',
             alignItems: 'start'
@@ -84,35 +78,33 @@ function JRPassComparator() {
                   <span style={{
                     background: 'var(--teal-bg)', color: 'var(--teal-text)',
                     border: '1px solid #99F6E4',
-                    borderRadius: 99, fontSize: 10, fontWeight: 600, padding: '1px 7px'
-                  }}>Sin JR Pass → Nozomi más rápido, mismo precio</span>
+                    borderRadius: 4, fontSize: 10, fontWeight: 600, padding: '2px 7px',
+                    display: 'inline-block'
+                  }}>→ Nozomi disponible (sin JR Pass)</span>
                 </div>
               )}
             </div>
-            <span style={{ fontSize: 12, color: 'var(--ink-4)', paddingTop: 2 }}>{t.fecha}</span>
+            <span className="jrc-col-date" style={{ fontSize: 12, color: 'var(--ink-4)', paddingTop: 2 }}>{t.fecha}</span>
             <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--ink-2)', textAlign: 'right', paddingTop: 2 }}>{t.precio}</span>
             <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--ink)', textAlign: 'right', paddingTop: 2 }}>{t.precio2}</span>
           </div>
         ))}
 
         {/* Total billetes sueltos */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 70px 90px 90px',
-          gap: 8,
+        <div className="jrc-table-row" style={{
           padding: '10px 14px',
           background: 'var(--bg)',
           borderTop: '2px solid var(--border-2)'
         }}>
           <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--ink)' }}>Total billetes sueltos</span>
-          <span />
+          <span className="jrc-col-date" />
           <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--ink-3)', textAlign: 'right' }}>~41.910¥</span>
           <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--ink)', textAlign: 'right' }}>~83.820¥</span>
         </div>
       </div>
 
       {/* Comparativa JR Pass vs Suelto */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 12 }}>
+      <div className="jrc-compare">
         {/* Sin JR Pass */}
         <div style={{
           background: 'var(--surface)',
