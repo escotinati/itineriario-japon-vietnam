@@ -16,7 +16,8 @@ npm run preview  # previsualizar el build
 src/
   App.jsx                   # componente raíz: estado global, navegación, notas personalizadas
   index.css                 # estilos globales (design tokens CSS + todos los componentes)
-  main.jsx                  # punto de entrada React
+  map-embeds.css            # estilos del bloque "Ruta completa del día" en DayCard
+  main.jsx                  # punto de entrada React (importa index.css y map-embeds.css)
   components/
     Accordion.jsx           # acordeones L1 (SectionAccordion) y L2 (BlockAccordion)
     Alert.jsx               # alertas de aviso (warn/blue/green/red)
@@ -30,6 +31,7 @@ src/
     Transport.jsx           # sección de transporte: vuelos, trenes y metro
   data/
     trips.js                # TODA la información del viaje (única fuente de verdad)
+    maps.js                 # rutas de Google Maps por destino y día (dayRoutes)
 ```
 
 ## Cómo añadir contenido
@@ -53,7 +55,15 @@ Toda la información del viaje está en `src/data/trips.js`. Exporta:
   subtitle: '東京',      // opcional, se muestra en gris debajo del nombre
   dates: '22 – 26 julio',
   alerts: [{ type: 'blue'|'green'|'red'|'warn', text: 'HTML string...' }],
-  days: [{ label: '22 jul', title: '...', desc: '...', tags: [{type, text}] }],
+  days: [
+    {
+      label: '22 jul',
+      title: '...',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=...',  // enlace al lugar principal
+      desc: '...',
+      tags: [{ type, text }],
+    }
+  ],
   extras: [...],        // opcional, mismo formato que days
   food: [{ name: '...', desc: '...' }],
 }
@@ -72,6 +82,39 @@ Para añadir un destino nuevo: añadir un objeto al array `destinations` en `tri
   mapsUrl: 'https://www.google.com/maps/search/?api=1&query=...',  // opcional
 }
 ```
+
+## Google Maps — dos capas de integración
+
+Cada día del itinerario tiene dos tipos de enlace a Maps:
+
+### 1. `mapsUrl` — lugar principal del día (en `trips.js`)
+Campo opcional en cada objeto `day` / `extra`. Enlaza al punto de interés principal del día (templo, barrio, aeropuerto…). Se muestra al expandir la tarjeta como una píldora azul **"Ver en Google Maps"** justo encima de la descripción.
+
+```js
+mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Senso-ji+Temple+Asakusa+Tokyo'
+```
+
+### 2. `routeUrl` — ruta completa del día (en `src/data/maps.js`)
+Objeto indexado por `dayRoutes[destId][dayIndex]` con la ruta de múltiples paradas del día completo. Se muestra al final del contenido expandido como un bloque verde **"Ruta completa del día"** con las paradas y un botón "Abrir ruta en Google Maps".
+
+```js
+// maps.js
+export const dayRoutes = {
+  tokyo: [
+    null,  // día sin ruta (llegada)
+    { label: 'Meiji Jingu → Takeshita St → Shibuya Crossing → Shibuya Sky', url: 'https://...' },
+    ...
+  ],
+  ...
+}
+```
+
+`DestGrid.jsx` lee `dayRoutes[dest.id]` y pasa `routeUrl={routes[i]}` como prop explícita a `DayCard`. Los extras no reciben `routeUrl`.
+
+### Props de `DayCard`
+- `label`, `title`, `desc`, `tags` — datos del día (desde `trips.js` via spread `{...d}`)
+- `mapsUrl` — enlace lugar principal (desde `trips.js` via spread `{...d}`)
+- `routeUrl` — objeto `{ label, url }` con la ruta completa (pasado explícitamente desde `DestGrid`)
 
 ## Grid de destinos
 
@@ -116,6 +159,7 @@ La animación usa `grid-template-rows: 0fr → 1fr` con un wrapper interno `over
 - **Vuelos** — `FlightCard`: origen/destino, hora, duración, aerolínea
 - **Trenes** — `TrainCard`: ruta, fecha, servicio (Shinkansen, etc.), notas
 - **Metro** — `MetroCard`: ciudad, tip general, lista de líneas útiles
+- **JR Pass Comparator** — tabla comparativa billetes sueltos vs JR Pass. El layout de la tabla usa las clases CSS `.jrc-table-row` y `.jrc-compare` (no inline styles) para que el media query mobile pueda sobreescribirlos.
 
 ## Formulario "Añadir nota"
 
@@ -123,6 +167,18 @@ En `SearchBar.jsx`, el botón "Añadir nota" vive integrado al final de la fila 
 - El icono `+` rota 45° hasta convertirse en `×`
 - El formulario aparece con animación slide-down (`grid-template-rows: 0fr → 1fr` en `.aef-wrap`)
 - Los campos ocultos tienen `tabIndex={-1}` para no interferir con la navegación por teclado
+
+## Mobile (iPhone 15 Pro · ≤480px)
+
+La app está optimizada para iPhone 15 Pro (393px de ancho lógico). El breakpoint principal es `@media (max-width: 480px)` definido en `index.css`.
+
+Ajustes aplicados:
+- `main`, `.hero`, `section` — padding reducido
+- `.bacc-trigger`, `.bacc-body` — padding compacto en acordeones
+- `.dest-tile-close` → 36px · `.custom-entry-remove` → 32px (touch targets mínimos)
+- `.jrc-table-row` → 3 columnas (oculta `.jrc-col-date`) · `.jrc-compare` → 1 columna vertical
+- `.aef-actions` → `flex-direction: column-reverse` con botones a ancho completo
+- `.day-maps-wrap`, `.day-route-block` → padding lateral ajustado a 16px
 
 ## Viaje
 
