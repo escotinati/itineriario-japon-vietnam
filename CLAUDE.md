@@ -157,9 +157,20 @@ La animación usa `grid-template-rows: 0fr → 1fr` con un wrapper interno `over
 
 `Transport.jsx` tiene tres `BlockAccordion` con sub-componentes propios:
 - **Vuelos** — `FlightCard`: origen/destino, hora, duración, aerolínea
+- **Escalas** — `StopoverBadge`: badge ámbar que aparece entre `FlightCard`s para indicar escala (ciudad + tiempo de espera). Se inserta por índice en el array de vuelos (i === 0 → escala Doha ida; i === 4 → escala Doha vuelta).
 - **Trenes** — `TrainCard`: ruta, fecha, servicio (Shinkansen, etc.), notas
 - **Metro** — `MetroCard`: ciudad, tip general, lista de líneas útiles
 - **JR Pass Comparator** — tabla comparativa billetes sueltos vs JR Pass. El layout de la tabla usa las clases CSS `.jrc-table-row` y `.jrc-compare` (no inline styles) para que el media query mobile pueda sobreescribirlos.
+
+### Estructura de un vuelo (en `trips.js`)
+
+Los vuelos con escala se dividen en tramos separados en el array `flights`. El componente `StopoverBadge` se renderiza entre tramos por posición de índice, no por datos del propio vuelo:
+
+```js
+// Vuelo Madrid → Tokio (vía Doha) = 2 objetos en flights
+{ from: 'MAD T4S', to: 'DOH', dep: '15:45', arr: '23:30', date: '21 jul', duration: '~6h 45 min' },
+{ from: 'DOH', to: 'NRT T2', dep: '02:50', arr: '19:10', date: '21 jul → 22 jul', duration: '~10h 20 min' },
+```
 
 ## Formulario "Añadir nota"
 

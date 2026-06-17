@@ -84,10 +84,12 @@ export const metro = [
 ]
 
 export const flights = [
-  { from: 'MAD T4S', to: 'NRT T2', dep: '15:45', arr: '19:10', date: '21 jul → 22 jul', duration: '~14 horas' },
+  { from: 'MAD T4S', to: 'DOH', dep: '15:45', arr: '23:30', date: '21 jul', duration: '~6h 45 min' },
+  { from: 'DOH', to: 'NRT T2', dep: '02:50', arr: '19:10', date: '21 jul → 22 jul', duration: '~10h 20 min' },
   { from: 'KIX T1', to: 'DAD', dep: '14:30', arr: '19:50', date: '4 ago', duration: '~4h 20 min' },
   { from: 'DAD T1', to: 'HAN T1', dep: '22:25', arr: '23:45', date: '8 ago', duration: '~1h 20 min' },
-  { from: 'HAN T2', to: 'MAD', dep: '19:30', arr: '07:35', date: '12 ago → 13 ago', duration: '~13 horas' },
+  { from: 'HAN T2', to: 'DOH', dep: '19:30', arr: '22:20', date: '12 ago', duration: '~6h 50 min' },
+  { from: 'DOH', to: 'MAD', dep: '01:25', arr: '07:35', date: '12 ago → 13 ago', duration: '~7h 10 min' },
 ]
 
 export const hotels = [

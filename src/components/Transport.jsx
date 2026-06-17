@@ -22,6 +22,27 @@ function FlightCard({ f }) {
   )
 }
 
+function StopoverBadge({ city, wait }) {
+  return (
+    <div style={{
+      display: 'flex',
+      alignItems: 'center',
+      gap: 8,
+      margin: '2px 0 2px 24px',
+      padding: '6px 12px',
+      background: 'var(--amber-bg)',
+      border: '1px solid #FDE68A',
+      borderRadius: 'var(--radius)',
+      borderLeft: '3px solid var(--amber-text)',
+    }}>
+      <span style={{ fontSize: 14 }}>⏳</span>
+      <span style={{ fontSize: 12, color: 'var(--amber-text)' }}>
+        <strong>Escala en {city}</strong> · espera ~{wait}
+      </span>
+    </div>
+  )
+}
+
 function JRPassComparator() {
   const trayectos = [
     { ruta: "N'EX Narita → Tokio", fecha: "22 jul", precio: "3.070¥", precio2: "6.140¥", nozomi: false, nota: "" },
@@ -293,7 +314,13 @@ export default function Transport() {
 
       <BlockAccordion title="Vuelos" count={flights.length} defaultOpen={true}>
         <div className="flights">
-          {flights.map((f, i) => <FlightCard key={i} f={f} />)}
+          {flights.map((f, i) => (
+            <div key={i}>
+              <FlightCard f={f} />
+              {i === 0 && <StopoverBadge city="Doha" wait="3h 20min" />}
+              {i === 4 && <StopoverBadge city="Doha" wait="3h 05min" />}
+            </div>
+          ))}
         </div>
       </BlockAccordion>
 
