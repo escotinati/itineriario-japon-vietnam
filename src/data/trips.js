@@ -197,6 +197,35 @@ export const destinations = [
   <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--ink-muted);font-weight:700">·</span><strong>Tsukiji Totodon</strong> (cena) — Marisco y sushi fresco en Shibuya.</li>
   <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--ink-muted);font-weight:700">·</span><strong>Ukai Tei</strong> (cena premium) — Teppanyaki de alta gama en Omotesando.</li>
 </ul>
+
+<hr style="border:none;border-top:1px solid var(--border);margin:18px 0" />
+<p style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-4);margin-bottom:12px">💡 Tips y recomendaciones — Tokio</p>
+
+<p style="margin-bottom:6px"><span style="background:var(--green-bg);color:var(--green-text);border:1px solid #BBF7D0;border-radius:99px;font-size:10px;font-weight:600;padding:1px 8px">restaurante</span></p>
+<ul style="list-style:none;display:flex;flex-direction:column;gap:5px;margin-bottom:14px">
+  <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--ink-muted);font-weight:700">·</span><strong>Ichiran Ramen</strong> — Ramen en cabinas individuales, experiencia única e introspectiva</li>
+  <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--ink-muted);font-weight:700">·</span><strong>Sushiro / Kurasushi</strong> — Conveyor belt sushi, económico y de buena calidad</li>
+  <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--ink-muted);font-weight:700">·</span><strong>Sukiya / Yoshinoya</strong> — Gyudon (cuenco de buey), ~500¥, rápido y barato</li>
+</ul>
+
+<p style="margin-bottom:6px"><span style="background:var(--amber-bg);color:var(--amber-text);border:1px solid #FDE68A;border-radius:99px;font-size:10px;font-weight:600;padding:1px 8px">entrada anticipada</span></p>
+<ul style="list-style:none;display:flex;flex-direction:column;gap:5px;margin-bottom:14px">
+  <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--ink-muted);font-weight:700">·</span><strong>TeamLab Tokio</strong> — Arte digital inmersivo en Odaiba. Reservar con semanas de antelación en la web oficial</li>
+  <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--ink-muted);font-weight:700">·</span><strong>Shibuya Sky</strong> — Mirador al aire libre en Scramble Square. Reservar online</li>
+</ul>
+
+<p style="margin-bottom:6px"><span style="background:var(--blue-bg);color:var(--blue-text);border:1px solid #BFDBFE;border-radius:99px;font-size:10px;font-weight:600;padding:1px 8px">shopping</span></p>
+<ul style="list-style:none;display:flex;flex-direction:column;gap:5px">
+  <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--ink-muted);font-weight:700">·</span><strong>Manhole Goods Store</strong> — Souvenirs con diseños de tapas de alcantarilla locales, únicos</li>
+  <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--ink-muted);font-weight:700">·</span><strong>Glanta</strong> — Anillos personalizados grabados al momento</li>
+  <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--ink-muted);font-weight:700">·</span><strong>Mizutani Camera en Ueno</strong> — Relojes vintage y de segunda mano</li>
+  <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--ink-muted);font-weight:700">·</span><strong>Itoya</strong> — Papelería de 6 plantas en Ginza</li>
+  <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--ink-muted);font-weight:700">·</span><strong>Jins</strong> — Óptica, gafas graduadas el mismo día</li>
+  <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--ink-muted);font-weight:700">·</span><strong>Seiyu</strong> — Supermercado (Walmart), más barato que los konbinis</li>
+  <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--ink-muted);font-weight:700">·</span><strong>3 COINS</strong> — Todo a 300¥: hogar, accesorios y regalos</li>
+  <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--ink-muted);font-weight:700">·</span><strong>ABC Mart</strong> — Cadena de calzado, marcas a buen precio</li>
+  <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--ink-muted);font-weight:700">·</span><strong>Don Quijote</strong> — Tienda 24h, buscar parches para los pies (kinesiológicos)</li>
+</ul>
         `,
         tags: [],
       },
@@ -382,6 +411,14 @@ export const destinations = [
   <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--ink-muted);font-weight:700">·</span>Funicular <strong>Gora → Sounzan</strong>, luego teleférico de góndola <strong>Sounzan → Owakudani → Togendai</strong>. Vistas crecientes del valle volcánico.</li>
   <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--ink-muted);font-weight:700">·</span><strong>Owakudani</strong> — Valle volcánico activo a ~1.044m. Fumarolas, piscinas sulfurosas burbujeantes y un paisaje de otro planeta. Los <strong>kuro-tamago</strong> (huevos negros cocidos en agua sulfurosa) se venden en bolsas de 5 por 500¥. La leyenda dice que comer uno añade 7 años de vida.</li>
 </ul>
+
+<hr style="border:none;border-top:1px solid var(--border);margin:18px 0" />
+<p style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-4);margin-bottom:12px">💡 Tips y recomendaciones — Hakone</p>
+
+<p style="margin-bottom:6px"><span style="background:var(--blue-bg);color:var(--blue-text);border:1px solid #BFDBFE;border-radius:99px;font-size:10px;font-weight:600;padding:1px 8px">transporte</span></p>
+<ul style="list-style:none;display:flex;flex-direction:column;gap:5px">
+  <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--ink-muted);font-weight:700">·</span><strong>Hakone Free Pass</strong> (Odakyu) — Incluye Shinkansen Shinjuku–Odawara ida y vuelta + transporte ilimitado dentro de Hakone (tren de montaña, teleférico, barco pirata, funicular, autobuses) + descuentos en 70+ atracciones. <strong>2 días: 7.100¥ · 3 días: 7.500¥</strong> (solo 400¥ de diferencia — mejor el de 3 días). Comprar en Klook, KKday o en el Odakyu Sightseeing Service Center de Shinjuku. El suplemento Romancecar (~1.150¥) se paga aparte. <span style="background:var(--green-bg);color:var(--green-text);border:1px solid #BBF7D0;border-radius:99px;font-size:10px;font-weight:600;padding:1px 8px">Ahorro ~5.750¥ vs suelto</span></li>
+</ul>
         `,
         tags: [],
       },
@@ -534,6 +571,23 @@ export const destinations = [
 <ul style="list-style:none;display:flex;flex-direction:column;gap:5px">
   <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--ink-muted);font-weight:700">·</span>Hanamikoji está llena de excelentes restaurantes. Busca <strong>obanzai</strong> (cocina casera kyotense en pequeños platos) o <strong>kaiseki asequible</strong> — una experiencia culinaria auténtica en el barrio más elegante de Kioto.</li>
   <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--ink-muted);font-weight:700">·</span>Para un ambiente más informal, cruza al lado del río y cena en <strong>Kiyamachi-dori</strong> con las izakayas junto al canal.</li>
+</ul>
+
+<hr style="border:none;border-top:1px solid var(--border);margin:18px 0" />
+<p style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-4);margin-bottom:12px">💡 Tips y recomendaciones — Kioto</p>
+
+<p style="margin-bottom:6px"><span style="background:var(--green-bg);color:var(--green-text);border:1px solid #BBF7D0;border-radius:99px;font-size:10px;font-weight:600;padding:1px 8px">restaurante</span></p>
+<ul style="list-style:none;display:flex;flex-direction:column;gap:5px;margin-bottom:14px">
+  <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--ink-muted);font-weight:700">·</span><strong>Sukemasa</strong> — Mejores gyozas de Kioto</li>
+  <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--ink-muted);font-weight:700">·</span><strong>Tonkatsu Maisen</strong> — Tonkatsu (chuleta de cerdo empanada), muy bien valorado</li>
+</ul>
+
+<p style="margin-bottom:6px"><span style="background:var(--blue-bg);color:var(--blue-text);border:1px solid #BFDBFE;border-radius:99px;font-size:10px;font-weight:600;padding:1px 8px">shopping</span></p>
+<ul style="list-style:none;display:flex;flex-direction:column;gap:5px">
+  <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--ink-muted);font-weight:700">·</span><strong>Veramore di nucleo Kyoto Honten</strong> — Palillos personalizados grabados al momento</li>
+  <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--ink-muted);font-weight:700">·</span><strong>Urban Research</strong> — Segunda mano curada, buena selección de ropa</li>
+  <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--ink-muted);font-weight:700">·</span><strong>Japan Blue Jeans</strong> — Denim japonés selecto de segunda mano</li>
+  <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--ink-muted);font-weight:700">·</span><strong>Kanful</strong> — Segunda mano curada, menswear</li>
 </ul>
         `,
         tags: [],
@@ -825,6 +879,14 @@ export const destinations = [
 <p style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-4);margin-bottom:6px">🏨 Castillo de Osaka (opcional)</p>
 <ul style="list-style:none;display:flex;flex-direction:column;gap:5px">
   <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--ink-muted);font-weight:700">·</span>Si queda tiempo a primera hora, el Castillo de Osaka vale la visita por los jardines y la perspectiva histórica. Mejor ir a las 9h para evitar colas. Metro línea Tanimachi hasta Tanimachi 4-chome.</li>
+</ul>
+
+<hr style="border:none;border-top:1px solid var(--border);margin:18px 0" />
+<p style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-4);margin-bottom:12px">💡 Tips y recomendaciones — Osaka</p>
+
+<p style="margin-bottom:6px"><span style="background:var(--green-bg);color:var(--green-text);border:1px solid #BBF7D0;border-radius:99px;font-size:10px;font-weight:600;padding:1px 8px">restaurante</span></p>
+<ul style="list-style:none;display:flex;flex-direction:column;gap:5px">
+  <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--ink-muted);font-weight:700">·</span><strong>Yakiniku Rikimaru Higashidori, Umeda</strong> — Yakiniku (carne a la parrilla) con carne de Kobe</li>
 </ul>
         `,
         tags: [],

@@ -4,11 +4,13 @@ import SearchBar from './components/SearchBar'
 import SearchResults from './components/SearchResults'
 import Overview from './components/Overview'
 import Transport from './components/Transport'
+import InfoCards from './components/InfoCards'
 import DestGrid from './components/DestGrid'
 import { useSearchResults } from './components/SearchResults'
 
 const NAV_LINKS = [
   { id: 'overview',   label: 'Resumen' },
+  { id: 'info',       label: 'Info práctica' },
   { id: 'transport',  label: 'Transporte' },
   { id: 'tokyo',      label: 'Tokio' },
   { id: 'hakone',     label: 'Hakone' },
@@ -109,6 +111,7 @@ export default function App() {
       ) : (
         <main>
           <Overview />
+          <InfoCards />
           <Transport />
           <section id="destinos">
             <div className="section-header">
